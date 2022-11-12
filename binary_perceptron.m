@@ -8,24 +8,24 @@ global T_MAX;
 T_MAX = 10^5;
 
 % Plotting the number of epochs till convergence for P=10, N=[10,20,100]
-% P = 10;
-% for N = [10, 20, 100]
-%     epochs_arr = zeros(1, N_REPS);
-%     for n = 1:N_REPS
-%         [X, y0] = generate_data(N, P);
-%         [~, converged, epochs] = perceptron(X, y0);
-%         if converged
-%             epochs_arr(n) = epochs;
-%         end
-%     end
-%     plot(epochs_arr, '--o')
-%     disp(mean(epochs_arr(epochs_arr>0)));  
-%     hold on
-% end
-% xlabel('n')
-% ylabel('epochs')
-% grid on
-% hold off
+P = 10;
+for N = [10, 20, 100]
+    epochs_arr = zeros(1, N_REPS);
+    for n = 1:N_REPS
+        [X, y0] = generate_data(N, P);
+        [~, converged, epochs] = perceptron(X, y0);
+        if converged
+            epochs_arr(n) = epochs;
+        end
+    end
+    plot(epochs_arr, '--o')
+    disp(mean(epochs_arr(epochs_arr>0)));  
+    hold on
+end
+xlabel('n')
+ylabel('epochs')
+grid on
+hold off
 
 % Plotting the probability of convergence as a function of alpha=P/N
 figure
@@ -90,15 +90,3 @@ function [w, converged, epochs] = perceptron(X, y0)
         epochs = epochs+1;
     end
 end 
-%             if converged
-%                 count = count + 1;
-%             end
-
-%             if epochs <= 10
-%                 e1(i) = e1(i) + 1;
-%             elseif epochs <= 10^2
-%                 e2(i) = e2(i) + 1;
-%             elseif epochs <= 10^3
-%                 e3(i) = e3(i) + 1;
-%             elseif ephocs <= 10^4
-%                 e4 = e4 + 1;
