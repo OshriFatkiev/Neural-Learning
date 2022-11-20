@@ -37,7 +37,6 @@ for N = [5, 20, 100]
     e2 = zeros(1, length(P));
     e3 = zeros(1, length(P));
     for i = 1:length(P)
-        count = 0; 
         converged_arr = zeros(1, N_REPS);
         epochs_arr = zeros(1, N_REPS);
         for n = 1:N_REPS
