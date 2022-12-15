@@ -11,3 +11,5 @@ Note - a notebook about Cover's theorem and the perceptron will be added soon
 * `checkboard.py` - TBA.
 * `data_10D.mat` - TBA.
 * `SVM and The Kernel Trick.ipynb` - TBA.
+
+### MLP - coming soon
